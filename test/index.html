@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>jQuery Wiggle</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../src/jquery.wiggle.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready( function() {
+			$("#wiggle").click( function() {
+				$(".demo").wiggle();
+				return false;
+			});
+		});
+	</script>
+	
+	<style type="text/css" media="screen">
+		body { font-family: Helvetica, Arial, sans-serif; color: #333; background: #dadada; }
+		h1 { background: #333; color: #dadada; padding: .25em; }
+		h1 span { color: #666; font-size: 80%; }
+		#wrap { width: 640px; margin: 0 auto; }
+
+		.demo { width: 15em; padding: .5em; margin: 2em 0; background: #d7dee1; border: 2px solid #999; }
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<h1>jQuery Wiggle</h1>
+
+		<h2>About</h2>
+		<p>The Wiggle plugin is a script that offer some of the functionality of the Effect library from jQuery UI. It is an alternative, useful in those situations when you need only one effect and do not wish to include the entire jQuery UI library in your project.</p>
+		<p>For example, the Blink plugin weighs in at 576 bytes. Comparatively, the jQuery UI core plus Effects library weigh in at around 125 kb.</p>
+
+		<h2>Demo</h2>
+		<div class="demo">
+			<p>
+				<label>First Name:</label><br />
+				<input type="text" name="fname" />
+			</p>
+		</div>
+		<div class="demo">
+			<p>
+				<label>Last Name:</label><br />
+				<input type="text" name="lname" />
+			</p>
+		</div>
+		<p><button id="wiggle">Wiggle</button></p>
+		
+		<h2>Basic Usage</h2>
+		<p>Include the jQuery library and the wiggle plugin:</p>
+		<pre>
+&lt;script type="text/javascript" src="javascripts/jquery-1.3.2.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="javascripts/jquery.wiggle.min.js"&gt;&lt;/script&gt;
+		</pre>
+		<p>Then, just call wiggle() on the desired element.</p>
+		<pre>
+$(".selector").wiggle();
+		</pre>
+
+		<h2>Additional Parameters</h2>
+		<pre>
+$(".selector").wiggle({
+	speed: [speed of animation (ms); default: 50],
+	wiggles: [number of times to wiggle; default: 3],
+	travel: [number of pixels to move],
+	callback: [function]
+});
+		</pre>
+		<p>Note: Callbacks are performed once per matched element.</p>
+	</div>
+</body>
+</html>
